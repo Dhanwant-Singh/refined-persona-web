@@ -1,10 +1,12 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Calendar, Building2, Award, ChevronRight, Users, Lightbulb, Target, Briefcase } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const WorkExperience = () => {
   const [activeTab, setActiveTab] = useState("experience");
+  const [visibleExps, setVisibleExps] = useState<number[]>([]);
+  const expRefs = useRef<(HTMLDivElement | null)[]>([]);
   
   const experiences = [
     {
@@ -78,39 +80,68 @@ const WorkExperience = () => {
     }
   ];
 
-  const leadershipIcons = {
-    teamTransformation: <Users className="w-12 h-12 text-apple-blue" />,
-    strategicInnovation: <Lightbulb className="w-12 h-12 text-apple-blue" />,
-    crisisManagement: <Target className="w-12 h-12 text-apple-blue" />
-  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = Number(entry.target.getAttribute('data-index'));
+          if (entry.isIntersecting) {
+            setVisibleExps(prev => [...prev, index].filter((v, i, a) => a.indexOf(v) === i));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    expRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      expRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
 
   return (
-    <section id="experience" className="section bg-white">
+    <section id="experience" className="section bg-white overflow-hidden">
       <div className="container-custom">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 opacity-0 animate-slide-up" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-apple-black mb-4">Professional Experience</h2>
           <p className="text-apple-darkgray text-lg max-w-2xl mx-auto">
             A track record of leadership, innovation, and measurable results across various roles.
           </p>
+          <div className="fancy-line"></div>
         </div>
 
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <div 
               key={index} 
-              className="apple-card p-8 md:p-10"
+              ref={el => expRefs.current[index] = el}
+              data-index={index}
+              className={`glass-card p-8 md:p-10 transition-all duration-700 transform ${
+                visibleExps.includes(index) 
+                  ? "opacity-100 translate-y-0" 
+                  : "opacity-0 translate-y-20"
+              }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="md:w-1/3">
-                  <h3 className="text-2xl font-bold text-apple-black">{exp.title}</h3>
-                  <div className="flex items-center text-apple-darkgray mt-2">
-                    <Building2 size={18} className="mr-2" />
+                  <h3 className="text-2xl font-bold text-apple-black relative inline-block">
+                    {exp.title}
+                    <span className="absolute -bottom-2 left-0 w-20 h-1 bg-apple-blue/30 rounded-full"></span>
+                  </h3>
+                  <div className="flex items-center text-apple-darkgray mt-6 transform transition-all hover:translate-x-1">
+                    <Building2 size={18} className="mr-2 text-apple-blue" />
                     <span>{exp.company}</span>
                   </div>
-                  <div className="flex items-center text-apple-darkgray mt-2">
-                    <Calendar size={18} className="mr-2" />
+                  <div className="flex items-center text-apple-darkgray mt-2 transform transition-all hover:translate-x-1">
+                    <Calendar size={18} className="mr-2 text-apple-blue" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
@@ -119,21 +150,21 @@ const WorkExperience = () => {
                   <p className="text-apple-black text-lg">{exp.description}</p>
                   
                   <div className="mt-6">
-                    <Tabs defaultValue="achievements" className="w-full">
-                      <TabsList className="mb-4 bg-apple-gray/20">
-                        <TabsTrigger value="achievements" className="text-sm">Key Achievements</TabsTrigger>
-                        <TabsTrigger value="responsibilities" className="text-sm">Responsibilities</TabsTrigger>
-                        <TabsTrigger value="leadership" className="text-sm">Leadership Highlights</TabsTrigger>
+                    <Tabs defaultValue="achievements" className="w-full enhanced-tabs">
+                      <TabsList className="mb-4 bg-apple-gray/20 p-1 rounded-full">
+                        <TabsTrigger value="achievements" className="tab text-sm">Key Achievements</TabsTrigger>
+                        <TabsTrigger value="responsibilities" className="tab text-sm">Responsibilities</TabsTrigger>
+                        <TabsTrigger value="leadership" className="tab text-sm">Leadership Highlights</TabsTrigger>
                       </TabsList>
                       
-                      <TabsContent value="achievements">
+                      <TabsContent value="achievements" className="animate-fade-in">
                         <h4 className="font-semibold text-apple-black flex items-center">
                           <Award size={18} className="mr-2 text-apple-blue" />
                           Key Achievements
                         </h4>
                         <ul className="mt-3 space-y-2">
                           {exp.achievements.map((achievement, i) => (
-                            <li key={i} className="flex items-start">
+                            <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                               <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
                               <span>{achievement}</span>
                             </li>
@@ -141,14 +172,14 @@ const WorkExperience = () => {
                         </ul>
                       </TabsContent>
                       
-                      <TabsContent value="responsibilities">
+                      <TabsContent value="responsibilities" className="animate-fade-in">
                         <h4 className="font-semibold text-apple-black flex items-center">
                           <Briefcase size={18} className="mr-2 text-apple-blue" />
                           Core Responsibilities
                         </h4>
                         <ul className="mt-3 space-y-2">
                           {exp.responsibilities.map((responsibility, i) => (
-                            <li key={i} className="flex items-start">
+                            <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                               <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
                               <span>{responsibility}</span>
                             </li>
@@ -156,14 +187,14 @@ const WorkExperience = () => {
                         </ul>
                       </TabsContent>
 
-                      <TabsContent value="leadership">
+                      <TabsContent value="leadership" className="animate-fade-in">
                         <h4 className="font-semibold text-apple-black flex items-center">
                           <Users size={18} className="mr-2 text-apple-blue" />
                           Leadership Highlights
                         </h4>
                         <ul className="mt-3 space-y-2">
                           {exp.leadership.map((item, i) => (
-                            <li key={i} className="flex items-start">
+                            <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                               <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
                               <span>{item}</span>
                             </li>

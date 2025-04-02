@@ -110,10 +110,174 @@
   }
 
   .apple-btn {
-    @apply bg-apple-blue text-white font-medium rounded-full px-5 py-2 inline-block transition-all hover:opacity-90;
+    @apply bg-apple-blue text-white font-medium rounded-full px-5 py-2 inline-block transition-all hover:opacity-90 hover:shadow-lg hover:translate-y-[-2px];
   }
 
   .apple-card {
     @apply bg-white rounded-2xl shadow-md overflow-hidden transition-all hover:shadow-lg;
   }
+  
+  /* New Apple-inspired glass card effect */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 transition-all;
+  }
+  
+  /* Text gradient effect */
+  .text-gradient {
+    @apply bg-gradient-to-r from-apple-blue to-indigo-500 bg-clip-text text-transparent;
+  }
+  
+  /* Parallax container */
+  .parallax-container {
+    @apply overflow-hidden relative;
+  }
+  
+  /* Micro-interactions for buttons and links */
+  .micro-btn {
+    @apply relative overflow-hidden transition-all duration-300 after:absolute after:inset-0 after:w-full after:h-full after:bg-white/20 after:opacity-0 hover:after:opacity-100 after:transition-opacity;
+  }
+}
+
+@layer components {
+  /* Enhanced tab styling */
+  .enhanced-tabs .tab {
+    @apply px-5 py-2 rounded-full border border-transparent transition-all;
+  }
+  
+  .enhanced-tabs .tab.active {
+    @apply border-apple-blue/30 bg-white shadow-sm;
+  }
+  
+  /* Modern card hover effect */
+  .hover-lift {
+    @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl;
+  }
+  
+  /* Fancy line separator */
+  .fancy-line {
+    @apply w-24 h-1 bg-gradient-to-r from-apple-blue to-indigo-500 rounded-full mx-auto my-6;
+  }
+}
+
+@layer utilities {
+  /* Enhanced scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-apple-blue/50 rounded-full hover:bg-apple-blue;
+  }
+  
+  /* Additional Animation Classes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-right {
+    animation: slide-right 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+/* Extended keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Original keyframes */
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-right {
+  0% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
