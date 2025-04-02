@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail, Linkedin, GitHub, MessageSquare } from "lucide-react";
+import { Mail, Linkedin, Github, MessageSquare } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -47,7 +47,7 @@ const ContactSection = () => {
               </div>
               
               <div className="flex items-center">
-                <GitHub className="text-apple-blue mr-4" size={24} />
+                <Github className="text-apple-blue mr-4" size={24} />
                 <div>
                   <h4 className="font-medium text-apple-black">GitHub</h4>
                   <a 
@@ -89,7 +89,7 @@ const ContactSection = () => {
                   className="w-10 h-10 rounded-full bg-apple-blue flex items-center justify-center text-white hover:bg-apple-black transition-colors"
                   aria-label="GitHub"
                 >
-                  <GitHub size={20} />
+                  <Github size={20} />
                 </a>
               </div>
             </div>
