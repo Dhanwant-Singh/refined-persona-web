@@ -47,18 +47,18 @@ const ContactSection = () => {
               </div>
             </div>
             
-            <div className="mt-12 flex flex-col items-center">
+            <div className="mt-12 text-center">
               <h3 className="text-xl font-bold text-apple-black mb-4">Connect With Me</h3>
-              <p className="text-apple-darkgray mb-6 text-center">
+              <p className="text-apple-darkgray mb-6">
                 Follow me on LinkedIn for professional updates and insights.
               </p>
               <div className="flex justify-center">
                 <a 
                   href="https://linkedin.com/in/johndoe" 
-                  className="w-10 h-10 rounded-full bg-apple-blue flex items-center justify-center text-white hover:bg-apple-black transition-colors"
+                  className="w-12 h-12 rounded-full bg-apple-blue flex items-center justify-center text-white hover:bg-apple-black transition-colors"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin size={20} />
+                  <Linkedin size={24} />
                 </a>
               </div>
             </div>
