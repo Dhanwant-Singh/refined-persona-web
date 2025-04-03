@@ -9,7 +9,7 @@ const LicensesCertifications = () => {
       issuer: "Coursera (Issued by Google)",
       date: "Issued Mar 2025",
       credentialId: "Q6RIGTGBYEGL",
-      credentialURL: "#",
+      credentialURL: "https://www.coursera.org/account/accomplishments/professional-cert/Q6RIGTGBYEGL?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof",
       topics: [
         "SEO & SEM strategy",
         "Email & content marketing",

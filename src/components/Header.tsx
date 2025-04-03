@@ -55,7 +55,7 @@ const Header = () => {
             isScrolled ? "text-apple-black" : "text-apple-black"
           }`}
         >
-          <span className="text-gradient">John Doe</span>
+          <span className="text-gradient">Dhanwant Singh</span>
         </a>
 
         {/* Desktop Navigation */}
