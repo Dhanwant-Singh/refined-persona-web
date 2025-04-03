@@ -1,29 +1,35 @@
 
 import React from "react";
-import { Award, Calendar, ExternalLink } from "lucide-react";
+import { Award, Calendar, ExternalLink, BookOpen, ChevronRight } from "lucide-react";
 
 const LicensesCertifications = () => {
   const certifications = [
     {
-      title: "Project Management Professional (PMP)",
-      issuer: "Project Management Institute",
-      date: "Issued Jun 2022 · Expires Jun 2025",
-      credentialId: "12345678",
-      credentialURL: "#"
+      title: "Google Digital Marketing & E-commerce Certificate",
+      issuer: "Coursera (Issued by Google)",
+      date: "Issued Mar 2025",
+      credentialId: "Q6RIGTGBYEGL",
+      credentialURL: "#",
+      topics: [
+        "SEO & SEM strategy",
+        "Email & content marketing",
+        "Google Ads, Analytics",
+        "E-commerce store management"
+      ]
     },
     {
-      title: "Certified ScrumMaster® (CSM)",
-      issuer: "Scrum Alliance",
-      date: "Issued Sep 2021 · No Expiration",
-      credentialId: "CSM-123456",
-      credentialURL: "#"
+      title: "JPMorgan Chase – Investment Banking Job Simulation",
+      issuer: "Forage",
+      date: "Issued Jun 2024",
+      credentialId: "wgcH34SRyvvs6E2k7",
+      credentialURL: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/JPMorgan%20Chase/YD2kY95RQxQtXxFTS_JPMorgan%20Chase_hjtSz55daP2R9s72X_1719360543718_completion_certificate.pdf"
     },
     {
-      title: "AWS Certified Solutions Architect – Associate",
-      issuer: "Amazon Web Services (AWS)",
-      date: "Issued Mar 2022 · Expires Mar 2025",
-      credentialId: "AWS-123456789",
-      credentialURL: "#"
+      title: "CBRE – Commercial Real Estate Job Simulation",
+      issuer: "Forage",
+      date: "Issued Jul 2024",
+      credentialId: "6isMcNXLqZ2q4E3w2",
+      credentialURL: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/CBRE/HQHwY7yGLujTjjdrF_CBRE_hjtSz55daP2R9s72X_1720646411402_completion_certificate.pdf"
     }
   ];
 
@@ -59,13 +65,32 @@ const LicensesCertifications = () => {
                     <span>{cert.date}</span>
                   </div>
                   <p className="text-sm text-apple-darkgray">Credential ID: {cert.credentialId}</p>
+                  
+                  {cert.topics && (
+                    <div className="mt-4">
+                      <h4 className="font-medium text-apple-black flex items-center mb-2">
+                        <BookOpen size={14} className="mr-1 text-apple-blue" />
+                        Covered Topics:
+                      </h4>
+                      <ul className="space-y-1">
+                        {cert.topics.map((topic, i) => (
+                          <li key={i} className="text-sm text-apple-darkgray flex items-start">
+                            <ChevronRight size={12} className="text-apple-blue mr-1 mt-1 flex-shrink-0" />
+                            <span>{topic}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
                 
                 <a 
                   href={cert.credentialURL} 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 flex items-center text-apple-blue hover:underline transition-all text-sm font-medium group"
                 >
-                  View credential
+                  {index === 0 ? "Verify Certificate" : "Show Credential"}
                   <ExternalLink size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

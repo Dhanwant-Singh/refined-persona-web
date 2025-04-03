@@ -35,9 +35,9 @@ const Footer = () => {
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div data-aos="fade-right">
-            <h3 className="text-xl font-bold mb-2">John Doe</h3>
+            <h3 className="text-xl font-bold mb-2">Dhanwant Singh</h3>
             <p className="text-gray-400">
-              Professional Leader & Innovator
+              Entrepreneur in Progress | Builder of Teams & Systems
             </p>
           </div>
           
@@ -58,7 +58,7 @@ const Footer = () => {
         
         <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+            &copy; {new Date().getFullYear()} Dhanwant Singh. All rights reserved.
           </p>
           
           <div className="mt-4 md:mt-0">

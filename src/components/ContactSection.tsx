@@ -33,7 +33,7 @@ const ContactSection = () => {
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-apple-black mb-4">Get in Touch</h2>
           <p className="text-apple-darkgray text-lg max-w-2xl mx-auto">
-            I'm always open to discussing new projects, opportunities, or partnerships.
+            I'm always open to conversations around entrepreneurship, partnerships, or innovative opportunities. Let's build something.
           </p>
           <div className="fancy-line"></div>
         </div>
@@ -57,10 +57,10 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium text-apple-black">Email</h4>
                     <a 
-                      href="mailto:john.doe@example.com" 
+                      href="mailto:dhanwantsomal73@outlook.com" 
                       className="text-apple-darkgray hover:text-apple-blue transition-colors"
                     >
-                      john.doe@example.com
+                      dhanwantsomal73@outlook.com
                     </a>
                   </div>
                 </div>
@@ -72,12 +72,12 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium text-apple-black">LinkedIn</h4>
                     <a 
-                      href="https://linkedin.com/in/johndoe" 
+                      href="https://linkedin.com/in/dhanwants" 
                       target="_blank" 
                       rel="noreferrer"
                       className="text-apple-darkgray hover:text-apple-blue transition-colors"
                     >
-                      linkedin.com/in/johndoe
+                      linkedin.com/in/dhanwants
                     </a>
                   </div>
                 </div>
@@ -86,11 +86,11 @@ const ContactSection = () => {
               <div className="mt-12 text-center">
                 <h3 className="text-xl font-bold text-apple-black mb-4">Connect With Me</h3>
                 <p className="text-apple-darkgray mb-6">
-                  Follow me on LinkedIn for professional updates and insights.
+                  Follow me on LinkedIn for updates, insights, and future ventures.
                 </p>
                 <div className="flex justify-center">
                   <a 
-                    href="https://linkedin.com/in/johndoe" 
+                    href="https://linkedin.com/in/dhanwants" 
                     className="w-16 h-16 rounded-full bg-apple-blue flex items-center justify-center text-white hover:bg-apple-black transition-colors animate-float shadow-lg group"
                     aria-label="LinkedIn"
                   >

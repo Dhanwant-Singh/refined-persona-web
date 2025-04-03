@@ -17,7 +17,7 @@ const HeroSection = () => {
           >
             <img
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
-              alt="John Doe"
+              alt="Dhanwant Singh"
               className="w-full h-full object-cover"
             />
           </div>
@@ -26,24 +26,24 @@ const HeroSection = () => {
         {/* Content */}
         <div className="lg:col-span-12 text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-apple-black">
-            <span className="text-gradient">John Doe</span>
+            <span className="text-gradient">Dhanwant Singh</span>
           </h1>
           <p className="text-2xl md:text-3xl text-apple-darkgray mb-8 max-w-3xl mx-auto">
-            Senior Product Manager with a passion for building innovative products that solve real-world problems.
+            Aspiring entrepreneur with a passion for building scalable systems, leading high-performing teams, and turning bold ideas into real-world impact.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-8 text-apple-darkgray">
             <div className="flex items-center">
               <Mail size={18} className="mr-2 text-apple-blue" />
-              <span>john.doe@example.com</span>
+              <span>dhanwantsomal73@outlook.com</span>
             </div>
             <div className="flex items-center">
               <Calendar size={18} className="mr-2 text-apple-blue" />
-              <span>Available from June 2023</span>
+              <span>Available Immediately</span>
             </div>
             <div className="flex items-center">
               <MapPin size={18} className="mr-2 text-apple-blue" />
-              <span>San Francisco, CA</span>
+              <span>Brampton, Ontario</span>
             </div>
           </div>
           

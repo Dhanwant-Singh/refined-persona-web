@@ -10,72 +10,69 @@ const WorkExperience = () => {
   
   const experiences = [
     {
-      title: "Senior Product Manager",
-      company: "Tech Innovations Inc",
-      period: "2020 - Present",
+      title: "Head of Operations",
+      company: "United Sports Club",
+      period: "March 2025 - Present",
       description:
-        "Leading a team of 15 across product development, design, and engineering. Launched 3 successful products generating $10M in revenue. Implemented agile methodologies that increased team productivity by 35%.",
+        "Leading a team of 30+ across operations, events, and community engagement. Successfully secured new sponsorships while improving operational efficiency and club participation.",
       achievements: [
-        "Spearheaded the development of our flagship product, increasing market share by 28%",
-        "Reduced development lifecycle by 40% through process optimization",
-        "Fostered cross-functional collaboration, improving team cohesion and employee satisfaction"
+        "Secured 5+ new sponsorships, increasing funding and community outreach",
+        "Improved scheduling efficiency by 40% through custom workflow systems",
+        "Increased overall club participation by 25% with optimized operations"
       ],
       responsibilities: [
-        "Define product vision, strategy and roadmap based on market research and customer needs",
-        "Lead cross-functional teams through all stages of product development lifecycle",
-        "Present product strategies to executive leadership and stakeholders",
-        "Analyze market trends and competitive landscape to identify growth opportunities"
+        "Manage daily operations: budgeting, logistics, staffing, inventory, and scheduling",
+        "Oversee facility management, event planning, and vendor coordination",
+        "Ensure league compliance, safety standards, and growth planning"
       ],
       leadership: [
-        "Transformed an underperforming team into a high-functioning unit by implementing clear communication channels",
-        "Championed the development of a new product line that generated $4.5M in its first year",
-        "Led crisis management efforts during a critical production issue, preserving $12M in annual contracts"
+        "Recruited, trained, and managed a 30+ person team",
+        "Built strategic partnerships with local businesses and organizations",
+        "Scaled club operations during peak seasons with zero disruptions"
       ]
     },
     {
-      title: "Product Manager",
-      company: "Digital Solutions Corp",
-      period: "2017 - 2020",
+      title: "Lead Generation Researcher",
+      company: "AYD Internet Marketing",
+      period: "March 2025 - Present",
       description:
-        "Managed product roadmap and development for enterprise SaaS platform. Worked closely with engineering and design teams to deliver features that increased user engagement by 45%.",
+        "Conducted in-depth market research to identify qualified prospects for SaaS products. Created comprehensive databases and strategic reports to support marketing efforts.",
       achievements: [
-        "Led successful product redesign that improved user retention by 60%",
-        "Introduced customer feedback loops that resulted in 90% satisfaction rate",
-        "Developed strategic partnerships that expanded the product ecosystem"
+        "Created lead database with 150+ qualified prospects",
+        "Developed strategic market reports to support SaaS expansion",
+        "Boosted marketing precision with better structured data"
       ],
       responsibilities: [
-        "Developed and maintained product roadmap with clear priorities and timelines",
-        "Collaborated with UX/UI designers to create intuitive user experiences",
-        "Conducted user research and usability testing to validate product decisions",
-        "Created detailed product specifications and user stories for development team"
+        "Researched industries and platforms for high-potential lead targeting",
+        "Structured contact and company data into marketing-ready systems",
+        "Evaluated market alignment with company strengths"
       ],
       leadership: [
-        "Mentored junior team members in agile methodologies and product management best practices",
-        "Initiated cross-department collaboration that broke down organizational silos",
-        "Advocated for user-centered design principles that became company standard"
+        "Led development of internal research processes",
+        "Delivered reports that influenced lead generation strategy",
+        "Initiated collaboration between research and outreach teams"
       ]
     },
     {
-      title: "Project Coordinator",
-      company: "Global Tech Services",
-      period: "2015 - 2017",
+      title: "Partnership & AI Content Coordinator",
+      company: "XPD Direct Inc.",
+      period: "September 2024 - October 2024",
       description:
-        "Coordinated cross-functional teams to deliver client projects on time and within budget. Managed stakeholder communications and project documentation.",
+        "Developed partnerships while implementing AI-driven content generation solutions. Created frameworks for content quality and ethical considerations.",
       achievements: [
-        "Delivered 12 major projects with 100% client satisfaction",
-        "Implemented project management tools that improved efficiency by 25%",
-        "Mentored junior team members in project management methodologies"
+        "Initiated outreach with 20+ brand partners",
+        "Reduced manual work with AI-driven content tools",
+        "Developed ethical frameworks for content bias detection"
       ],
       responsibilities: [
-        "Tracked project progress and ensured deadlines were met",
-        "Facilitated communication between team members, stakeholders, and clients",
-        "Prepared project status reports and presentations for management review",
-        "Managed project documentation and knowledge repository"
+        "Researched and contacted strategic partners",
+        "Supported AI content generation and quality control",
+        "Compiled performance reports for internal use"
       ],
       leadership: [
-        "Volunteered to lead a struggling project and turned it around to meet all deadlines",
-        "Created documentation templates that were adopted company-wide",
-        "Initiated weekly team-building activities that improved team morale and productivity"
+        "Standardized content evaluation processes",
+        "Spearheaded use of AI review frameworks",
+        "Collaborated across departments on digital outreach"
       ]
     }
   ];
@@ -110,7 +107,7 @@ const WorkExperience = () => {
         <div className="text-center mb-16 opacity-0 animate-slide-up" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-apple-black mb-4">Professional Experience</h2>
           <p className="text-apple-darkgray text-lg max-w-2xl mx-auto">
-            A track record of leadership, innovation, and measurable results across various roles.
+            A journey defined by hands-on leadership, strategic thinking, and an entrepreneurial drive — across operations, marketing, and growth-focused partnerships.
           </p>
           <div className="fancy-line"></div>
         </div>
