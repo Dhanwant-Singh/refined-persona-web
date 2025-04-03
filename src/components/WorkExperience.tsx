@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
-import { Calendar, Building2, Award, ChevronRight, Users, Lightbulb, Target, Briefcase } from "lucide-react";
+import { Calendar, Building2, Award, ChevronRight, Users, Lightbulb, Target, Briefcase, ExternalLink } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const WorkExperience = () => {
@@ -204,6 +204,40 @@ const WorkExperience = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* LinkedIn reference section */}
+        <div 
+          className="text-center mt-16 glass-card p-6 transform transition-all duration-700 opacity-0 translate-y-20"
+          ref={el => {
+            if (el) {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      el.classList.remove("opacity-0", "translate-y-20");
+                      el.classList.add("opacity-100", "translate-y-0");
+                    }
+                  });
+                },
+                { threshold: 0.2 }
+              );
+              observer.observe(el);
+              return () => observer.unobserve(el);
+            }
+          }}
+        >
+          <p className="text-xl text-apple-darkgray flex items-center justify-center gap-2">
+            View many more experiences on my{" "}
+            <a 
+              href="https://linkedin.com/in/dhanwants" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-apple-blue font-medium hover:underline flex items-center"
+            >
+              LinkedIn <ExternalLink size={18} className="ml-1" />
+            </a>
+          </p>
         </div>
       </div>
     </section>
