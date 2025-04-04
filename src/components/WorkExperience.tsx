@@ -151,11 +151,13 @@ const WorkExperience = () => {
                   
                   <div className="mt-6">
                     <Tabs defaultValue="achievements" className="w-full enhanced-tabs">
-                      <TabsList className="mb-4 bg-apple-gray/20 p-1 rounded-full overflow-x-auto flex-nowrap whitespace-nowrap">
-                        <TabsTrigger value="achievements" className="tab text-sm py-2 px-3">Key Achievements</TabsTrigger>
-                        <TabsTrigger value="responsibilities" className="tab text-sm py-2 px-3">Responsibilities</TabsTrigger>
-                        <TabsTrigger value="leadership" className="tab text-sm py-2 px-3">Leadership</TabsTrigger>
-                      </TabsList>
+                      <div className="overflow-x-auto">
+                        <TabsList className="mb-4 bg-apple-gray/20 p-1 rounded-full inline-flex whitespace-nowrap min-w-full">
+                          <TabsTrigger value="achievements" className="tab text-sm py-2 px-4">Key Achievements</TabsTrigger>
+                          <TabsTrigger value="responsibilities" className="tab text-sm py-2 px-4">Responsibilities</TabsTrigger>
+                          <TabsTrigger value="leadership" className="tab text-sm py-2 px-4">Leadership</TabsTrigger>
+                        </TabsList>
+                      </div>
                       
                       <TabsContent value="achievements" className="animate-fade-in">
                         <h4 className="font-semibold text-apple-black flex items-center">
@@ -192,16 +194,18 @@ const WorkExperience = () => {
                           <Users size={18} className="mr-2 text-apple-blue" />
                           Leadership Highlights
                         </h4>
-                        <ScrollArea className="h-[180px] pr-4 mt-3">
-                          <ul className="space-y-2">
+                        <div className="mt-3 overflow-x-auto pb-2">
+                          <div className="flex space-x-4">
                             {exp.leadership.map((item, i) => (
-                              <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
-                                <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
-                                <span>{item}</span>
-                              </li>
+                              <div key={i} className="flex-shrink-0 max-w-xs bg-gray-50 p-3 rounded-lg transform transition-all duration-300 hover:translate-y-[-2px]">
+                                <div className="flex items-start">
+                                  <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
+                                  <span>{item}</span>
+                                </div>
+                              </div>
                             ))}
-                          </ul>
-                        </ScrollArea>
+                          </div>
+                        </div>
                       </TabsContent>
                     </Tabs>
                   </div>
