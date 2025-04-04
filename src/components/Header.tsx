@@ -134,25 +134,27 @@ const Header = () => {
     }, 1000); // Matches scroll-behavior: smooth duration
   };
 
-  // Function to handle mobile menu toggle
+  // Function to handle mobile menu toggle with smoother scrolling
   const handleMobileMenuToggle = () => {
     // If we're opening the menu, scroll to top first
     if (!mobileMenuOpen) {
-      // Scroll to top of the page
+      // Mark that we're actively scrolling to prevent section updates
+      isScrollingRef.current = true;
+      
+      // Scroll to top of the page with gentler easing
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
       
-      // Mark that we're actively scrolling to prevent section updates
-      isScrollingRef.current = true;
-      
-      // Wait for scroll to complete before opening menu
+      // Use a more gradual transition timing
       setTimeout(() => {
         setMobileMenuOpen(true);
-        isScrollingRef.current = false;
-        setActiveSection('home');
-      }, 500);
+        setTimeout(() => {
+          isScrollingRef.current = false;
+          setActiveSection('home');
+        }, 100); // Small additional delay for smoother transition
+      }, 300); // Reduced from 500ms for a more responsive feel
     } else {
       // Just close the menu if it's already open
       setMobileMenuOpen(false);
