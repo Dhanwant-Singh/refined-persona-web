@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="section min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="section min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-0" // Added padding-top for mobile
     >
       <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Image first, now smaller and above the content */}

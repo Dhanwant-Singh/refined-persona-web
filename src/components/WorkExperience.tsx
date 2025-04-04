@@ -151,10 +151,10 @@ const WorkExperience = () => {
                   
                   <div className="mt-6">
                     <Tabs defaultValue="achievements" className="w-full enhanced-tabs">
-                      <TabsList className="mb-4 bg-apple-gray/20 p-1 rounded-full">
-                        <TabsTrigger value="achievements" className="tab text-sm">Key Achievements</TabsTrigger>
-                        <TabsTrigger value="responsibilities" className="tab text-sm">Responsibilities</TabsTrigger>
-                        <TabsTrigger value="leadership" className="tab text-sm">Leadership Highlights</TabsTrigger>
+                      <TabsList className="mb-4 bg-apple-gray/20 p-1 rounded-full overflow-x-auto flex-nowrap whitespace-nowrap">
+                        <TabsTrigger value="achievements" className="tab text-sm py-2 px-3">Key Achievements</TabsTrigger>
+                        <TabsTrigger value="responsibilities" className="tab text-sm py-2 px-3">Responsibilities</TabsTrigger>
+                        <TabsTrigger value="leadership" className="tab text-sm py-2 px-3">Leadership</TabsTrigger>
                       </TabsList>
                       
                       <TabsContent value="achievements" className="animate-fade-in">
@@ -188,39 +188,20 @@ const WorkExperience = () => {
                       </TabsContent>
 
                       <TabsContent value="leadership" className="animate-fade-in">
-                        {isMobile ? (
-                          <div>
-                            <h4 className="font-semibold text-apple-black flex items-center">
-                              <Users size={18} className="mr-2 text-apple-blue" />
-                              Leadership Highlights
-                            </h4>
-                            <ScrollArea className="h-[200px] pr-4 mt-3">
-                              <ul className="space-y-2">
-                                {exp.leadership.map((item, i) => (
-                                  <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
-                                    <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
-                                    <span>{item}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </ScrollArea>
-                          </div>
-                        ) : (
-                          <div>
-                            <h4 className="font-semibold text-apple-black flex items-center">
-                              <Users size={18} className="mr-2 text-apple-blue" />
-                              Leadership Highlights
-                            </h4>
-                            <ul className="mt-3 space-y-2">
-                              {exp.leadership.map((item, i) => (
-                                <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
-                                  <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
+                        <h4 className="font-semibold text-apple-black flex items-center">
+                          <Users size={18} className="mr-2 text-apple-blue" />
+                          Leadership Highlights
+                        </h4>
+                        <ScrollArea className="h-[180px] pr-4 mt-3">
+                          <ul className="space-y-2">
+                            {exp.leadership.map((item, i) => (
+                              <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
+                                <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </ScrollArea>
                       </TabsContent>
                     </Tabs>
                   </div>
