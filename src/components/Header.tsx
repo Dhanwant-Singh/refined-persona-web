@@ -1,11 +1,15 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const isMobile = useIsMobile();
+  const scrollTimerRef = useRef<number | null>(null);
+  const lastScrollTop = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,23 +20,62 @@ const Header = () => {
         setIsScrolled(false);
       }
       
-      // Update active section based on scroll position
-      const sections = document.querySelectorAll("section[id]");
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const sectionId = section.getAttribute("id") || "";
-        
-        if (sectionTop < window.innerHeight * 0.5 && sectionTop > -window.innerHeight * 0.5) {
-          setActiveSection(sectionId);
+      // Throttle the active section updates to prevent rapid changes on mobile
+      if (isMobile) {
+        const currentScrollTop = window.scrollY;
+        // Only update if we've scrolled at least 50px to avoid small scroll jitters
+        if (Math.abs(currentScrollTop - lastScrollTop.current) > 50) {
+          lastScrollTop.current = currentScrollTop;
+          
+          if (scrollTimerRef.current !== null) {
+            window.clearTimeout(scrollTimerRef.current);
+          }
+          
+          scrollTimerRef.current = window.setTimeout(() => {
+            updateActiveSection();
+            scrollTimerRef.current = null;
+          }, 100);
         }
-      });
+      } else {
+        // For desktop, update immediately
+        updateActiveSection();
+      }
+    };
+
+    const updateActiveSection = () => {
+      // Arrange sections by their position in the document
+      const sections = Array.from(document.querySelectorAll("section[id]"))
+        .sort((a, b) => {
+          const aTop = a.getBoundingClientRect().top;
+          const bTop = b.getBoundingClientRect().top;
+          return aTop - bTop;
+        });
+      
+      // Find the first section that's close to the viewport center
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        // Section is in view if its top is above the middle of the viewport
+        // and its bottom is below the middle of the viewport
+        if (rect.top < viewportHeight * 0.6 && rect.bottom > viewportHeight * 0.4) {
+          const newActiveSection = section.getAttribute("id") || "";
+          if (newActiveSection !== activeSection) {
+            setActiveSection(newActiveSection);
+          }
+          break;
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (scrollTimerRef.current !== null) {
+        window.clearTimeout(scrollTimerRef.current);
+      }
     };
-  }, []);
+  }, [activeSection, isMobile]);
 
   const navLinks = [
     { name: "Home", href: "#home" },

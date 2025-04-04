@@ -56,31 +56,10 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-white/10 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} Dhanwant Singh. All rights reserved.
           </p>
-          
-          <div className="mt-4 md:mt-0">
-            <ul className="flex space-x-6">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1px] after:bg-white/30 after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm relative after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1px] after:bg-white/30 after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
-                >
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
       

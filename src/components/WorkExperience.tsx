@@ -2,11 +2,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Calendar, Building2, Award, ChevronRight, Users, Lightbulb, Target, Briefcase, ExternalLink } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const WorkExperience = () => {
   const [activeTab, setActiveTab] = useState("experience");
   const [visibleExps, setVisibleExps] = useState<number[]>([]);
   const expRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const isMobile = useIsMobile();
   
   const experiences = [
     {
@@ -185,18 +188,39 @@ const WorkExperience = () => {
                       </TabsContent>
 
                       <TabsContent value="leadership" className="animate-fade-in">
-                        <h4 className="font-semibold text-apple-black flex items-center">
-                          <Users size={18} className="mr-2 text-apple-blue" />
-                          Leadership Highlights
-                        </h4>
-                        <ul className="mt-3 space-y-2">
-                          {exp.leadership.map((item, i) => (
-                            <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
-                              <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        {isMobile ? (
+                          <div>
+                            <h4 className="font-semibold text-apple-black flex items-center">
+                              <Users size={18} className="mr-2 text-apple-blue" />
+                              Leadership Highlights
+                            </h4>
+                            <ScrollArea className="h-[200px] pr-4 mt-3">
+                              <ul className="space-y-2">
+                                {exp.leadership.map((item, i) => (
+                                  <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
+                                    <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </ScrollArea>
+                          </div>
+                        ) : (
+                          <div>
+                            <h4 className="font-semibold text-apple-black flex items-center">
+                              <Users size={18} className="mr-2 text-apple-blue" />
+                              Leadership Highlights
+                            </h4>
+                            <ul className="mt-3 space-y-2">
+                              {exp.leadership.map((item, i) => (
+                                <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
+                                  <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </TabsContent>
                     </Tabs>
                   </div>
