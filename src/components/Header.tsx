@@ -134,6 +134,31 @@ const Header = () => {
     }, 1000); // Matches scroll-behavior: smooth duration
   };
 
+  // Function to handle mobile menu toggle
+  const handleMobileMenuToggle = () => {
+    // If we're opening the menu, scroll to top first
+    if (!mobileMenuOpen) {
+      // Scroll to top of the page
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      // Mark that we're actively scrolling to prevent section updates
+      isScrollingRef.current = true;
+      
+      // Wait for scroll to complete before opening menu
+      setTimeout(() => {
+        setMobileMenuOpen(true);
+        isScrollingRef.current = false;
+        setActiveSection('home');
+      }, 500);
+    } else {
+      // Just close the menu if it's already open
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -176,7 +201,7 @@ const Header = () => {
           className={`md:hidden relative z-20 p-2 rounded-full ${
             mobileMenuOpen ? "bg-apple-blue text-white" : "text-apple-black"
           }`}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          onClick={handleMobileMenuToggle}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
