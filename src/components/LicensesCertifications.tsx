@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Award, Calendar, ExternalLink, BookOpen, ChevronRight } from "lucide-react";
 
@@ -20,8 +21,8 @@ const LicensesCertifications = () => {
       title: "Introduction to Marketing",
       issuer: "Coursera (University of Pennsylvania)",
       date: "Issued Apr 2025",
-      credentialId: "0ab9365cc94107e2fced02997c1e69b6",
-      credentialURL: "https://coursera.org/share/0ab9365cc94107e2fced02997c1e69b6",
+      credentialId: "UKND3U4Q7BR5",
+      credentialURL: "https://www.coursera.org/account/accomplishments/professional-cert/UKND3U4Q7BR5",
       topics: [
         "Marketing strategy fundamentals",
         "Brand positioning & consumer psychology",
