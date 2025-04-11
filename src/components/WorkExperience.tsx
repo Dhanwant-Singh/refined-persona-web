@@ -39,7 +39,7 @@ const WorkExperience = () => {
       company: "A&W Food Services of Canada Inc.",
       period: "March 2025 - Present",
       description:
-        "Managing daily restaurant operations with focus on standard operating procedures, customer service excellence, and operational efficiency in this fast-paced franchise environment.",
+        "Managing daily restaurant operations with a strategic focus on business growth metrics, profit optimization, and system scalability. Developing comprehensive business acumen while mastering the operational blueprint of this successful franchise model.",
       achievements: [
         "Led daily operations using established franchise systems and SOPs",
         "Maintained consistent quality standards across all food preparation",
