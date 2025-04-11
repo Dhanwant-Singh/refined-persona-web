@@ -90,7 +90,7 @@ const LicensesCertifications = () => {
                   rel="noopener noreferrer"
                   className="mt-4 flex items-center text-apple-blue hover:underline transition-all text-sm font-medium group"
                 >
-                  {index === 0 ? "Verify Certificate" : "Show Credential"}
+                  Show Credential
                   <ExternalLink size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
