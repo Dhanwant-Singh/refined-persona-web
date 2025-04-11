@@ -35,6 +35,29 @@ const WorkExperience = () => {
       ]
     },
     {
+      title: "Assistant Manager",
+      company: "A&W Food Services of Canada Inc.",
+      period: "March 2025 - Present",
+      description:
+        "Managing daily restaurant operations with focus on standard operating procedures, customer service excellence, and operational efficiency in this fast-paced franchise environment.",
+      achievements: [
+        "Led daily operations using established franchise systems and SOPs",
+        "Maintained consistent quality standards across all food preparation",
+        "Optimized labor scheduling to match sales forecasts and business needs"
+      ],
+      responsibilities: [
+        "Assist with day-to-day operations including food prep, order taking, and maintaining service flow",
+        "Control food/labor costs and minimize waste through inventory management",
+        "Ensure brand consistency and quality standards across all customer touchpoints",
+        "Track KPIs: sales, margins, speed of service, and customer satisfaction metrics"
+      ],
+      leadership: [
+        "Assist with handling inventory, ordering, and vendor relations",
+        "Learn full P&L and budgeting responsibilities for career advancement",
+        "Train and develop team members on operational procedures and standards"
+      ]
+    },
+    {
       title: "Lead Generation Researcher",
       company: "AYD Internet Marketing",
       period: "March 2025 - Present",
