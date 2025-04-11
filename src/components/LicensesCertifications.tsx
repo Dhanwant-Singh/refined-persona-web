@@ -18,19 +18,6 @@ const LicensesCertifications = () => {
       ]
     },
     {
-      title: "Introduction to Marketing",
-      issuer: "Coursera (University of Pennsylvania)",
-      date: "Issued Apr 2025",
-      credentialId: "UKND3U4Q7BR5",
-      credentialURL: "https://www.coursera.org/account/accomplishments/professional-cert/UKND3U4Q7BR5",
-      topics: [
-        "Marketing strategy fundamentals",
-        "Brand positioning & consumer psychology",
-        "Market segmentation & targeting",
-        "Marketing analytics & ROI measurement"
-      ]
-    },
-    {
       title: "JPMorgan Chase – Investment Banking Job Simulation",
       issuer: "Forage",
       date: "Issued Jun 2024",
