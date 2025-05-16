@@ -28,11 +28,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section bg-apple-gray">
+    <section id="contact" className="section bg-dark-background">
       <div className="container-custom">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-apple-black mb-4">Get in Touch</h2>
-          <p className="text-apple-darkgray text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-4">Get in Touch</h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             I'm always open to conversations around entrepreneurship, partnerships, or innovative opportunities. Let's build something.
           </p>
           <div className="fancy-line"></div>
@@ -47,18 +47,18 @@ const ContactSection = () => {
             data-aos="fade-up"
           >
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-apple-black mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
               
               <div className="space-y-6">
                 <div className="flex items-center transform transition-all hover:translate-x-2">
-                  <div className="bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-sm mr-4">
-                    <Mail className="text-apple-blue" size={24} />
+                  <div className="bg-dark-accent backdrop-blur-sm p-3 rounded-full shadow-sm mr-4">
+                    <Mail className="text-blue-400" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-apple-black">Email</h4>
+                    <h4 className="font-medium text-white">Email</h4>
                     <a 
                       href="mailto:dhanwantsomal73@outlook.com" 
-                      className="text-apple-darkgray hover:text-apple-blue transition-colors"
+                      className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       dhanwantsomal73@outlook.com
                     </a>
@@ -66,16 +66,16 @@ const ContactSection = () => {
                 </div>
                 
                 <div className="flex items-center transform transition-all hover:translate-x-2">
-                  <div className="bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-sm mr-4">
-                    <Linkedin className="text-apple-blue" size={24} />
+                  <div className="bg-dark-accent backdrop-blur-sm p-3 rounded-full shadow-sm mr-4">
+                    <Linkedin className="text-blue-400" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-apple-black">LinkedIn</h4>
+                    <h4 className="font-medium text-white">LinkedIn</h4>
                     <a 
                       href="https://linkedin.com/in/dhanwants" 
                       target="_blank" 
                       rel="noreferrer"
-                      className="text-apple-darkgray hover:text-apple-blue transition-colors"
+                      className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       linkedin.com/in/dhanwants
                     </a>
@@ -84,14 +84,14 @@ const ContactSection = () => {
               </div>
               
               <div className="mt-12 text-center">
-                <h3 className="text-xl font-bold text-apple-black mb-4">Connect With Me</h3>
-                <p className="text-apple-darkgray mb-6">
+                <h3 className="text-xl font-bold text-white mb-4">Connect With Me</h3>
+                <p className="text-gray-400 mb-6">
                   Follow me on LinkedIn for updates, insights, and future ventures.
                 </p>
                 <div className="flex justify-center">
                   <a 
                     href="https://linkedin.com/in/dhanwants" 
-                    className="w-16 h-16 rounded-full bg-apple-blue flex items-center justify-center text-white hover:bg-apple-black transition-colors animate-float shadow-lg group"
+                    className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white hover:bg-blue-700 transition-colors animate-float shadow-lg shadow-blue-600/20 group"
                     aria-label="LinkedIn"
                   >
                     <Linkedin size={28} className="group-hover:scale-110 transition-transform" />

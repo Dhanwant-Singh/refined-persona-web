@@ -54,10 +54,17 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				apple: {
-					gray: '#f5f5f7',
-					darkgray: '#86868b',
-					black: '#1d1d1f',
-					blue: '#0071e3',
+					gray: '#1E1E1E', // Darker gray
+					darkgray: '#ADADAD', // Lighter for better contrast on dark
+					black: '#E0E0E0', // Light color for text on dark bg
+					blue: '#3B82F6', // Blue with better visibility on dark
+				},
+				dark: {
+					background: '#121212', // Main dark background
+					card: '#1E1E1E', // Slightly lighter than background
+					accent: '#2D2D2D', // For subtle highlights
+					border: '#333333', // Visible borders
+					text: '#E0E0E0', // Light text for readability
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
