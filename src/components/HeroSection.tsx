@@ -16,7 +16,7 @@ const HeroSection = () => {
         {/* Avatar with letter D */}
         <div className="lg:col-span-12 flex justify-center mb-5">
           <Avatar className="h-24 w-24 border-4 border-white shadow-xl bg-gradient-to-br from-purple-500 to-blue-600">
-            <AvatarFallback className="text-3xl font-bold text-white">
+            <AvatarFallback className="text-3xl font-bold text-apple-blue">
               D
             </AvatarFallback>
           </Avatar>
