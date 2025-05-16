@@ -55,16 +55,16 @@ export default {
 				},
 				apple: {
 					gray: '#1E1E1E', // Darker gray
-					darkgray: '#ADADAD', // Lighter for better contrast on dark
-					black: '#E0E0E0', // Light color for text on dark bg
-					blue: '#3B82F6', // Blue with better visibility on dark
+					darkgray: '#DDDDDD', // Lighter for better contrast on dark
+					black: '#FFFFFF', // Light color for text on dark bg
+					blue: '#4B9FFF', // Brighter blue with better visibility on dark
 				},
 				dark: {
-					background: '#121212', // Main dark background
-					card: '#1E1E1E', // Slightly lighter than background
-					accent: '#2D2D2D', // For subtle highlights
+					background: '#0A0A0A', // Darker main background
+					card: '#161616', // Slightly lighter than background
+					accent: '#242424', // For subtle highlights
 					border: '#333333', // Visible borders
-					text: '#E0E0E0', // Light text for readability
+					text: '#F0F0F0', // Light text for readability
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

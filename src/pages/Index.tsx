@@ -40,7 +40,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-dark-background overflow-x-hidden">
       <div 
         className="fixed inset-0 pointer-events-none z-0 opacity-5"
         style={{

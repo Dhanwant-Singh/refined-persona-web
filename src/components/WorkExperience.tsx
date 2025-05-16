@@ -128,11 +128,11 @@ const WorkExperience = () => {
   }, []);
 
   return (
-    <section id="experience" className="section bg-white overflow-hidden">
+    <section id="experience" className="section bg-dark-background overflow-hidden">
       <div className="container-custom">
         <div className="text-center mb-16 opacity-0 animate-slide-up" data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-apple-black mb-4">Professional Experience</h2>
-          <p className="text-apple-darkgray text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-4">Professional Experience</h2>
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto">
             A journey defined by hands-on leadership, strategic thinking, and an entrepreneurial drive — across operations, marketing, and growth-focused partnerships.
           </p>
           <div className="fancy-line"></div>
@@ -155,27 +155,27 @@ const WorkExperience = () => {
             >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="md:w-1/3">
-                  <h3 className="text-2xl font-bold text-apple-black relative inline-block">
+                  <h3 className="text-2xl font-bold text-white relative inline-block">
                     {exp.title}
                     <span className="absolute -bottom-2 left-0 w-20 h-1 bg-apple-blue/30 rounded-full"></span>
                   </h3>
-                  <div className="flex items-center text-apple-darkgray mt-6 transform transition-all hover:translate-x-1">
+                  <div className="flex items-center text-gray-300 mt-6 transform transition-all hover:translate-x-1">
                     <Building2 size={18} className="mr-2 text-apple-blue" />
                     <span>{exp.company}</span>
                   </div>
-                  <div className="flex items-center text-apple-darkgray mt-2 transform transition-all hover:translate-x-1">
+                  <div className="flex items-center text-gray-300 mt-2 transform transition-all hover:translate-x-1">
                     <Calendar size={18} className="mr-2 text-apple-blue" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
                 
                 <div className="md:w-2/3">
-                  <p className="text-apple-black text-lg">{exp.description}</p>
+                  <p className="text-white text-lg">{exp.description}</p>
                   
                   <div className="mt-6">
                     <Tabs defaultValue="achievements" className="w-full enhanced-tabs">
                       <div className="overflow-x-auto">
-                        <TabsList className="mb-4 bg-apple-gray/20 p-1 rounded-full inline-flex whitespace-nowrap min-w-full">
+                        <TabsList className="mb-4 bg-dark-accent/80 p-1 rounded-full inline-flex whitespace-nowrap min-w-full">
                           <TabsTrigger value="achievements" className="tab text-sm py-2 px-4">Key Achievements</TabsTrigger>
                           <TabsTrigger value="responsibilities" className="tab text-sm py-2 px-4">Responsibilities</TabsTrigger>
                           <TabsTrigger value="leadership" className="tab text-sm py-2 px-4">Leadership</TabsTrigger>
@@ -183,11 +183,11 @@ const WorkExperience = () => {
                       </div>
                       
                       <TabsContent value="achievements" className="animate-fade-in">
-                        <h4 className="font-semibold text-apple-black flex items-center">
+                        <h4 className="font-semibold text-white flex items-center">
                           <Award size={18} className="mr-2 text-apple-blue" />
                           Key Achievements
                         </h4>
-                        <ul className="mt-3 space-y-2">
+                        <ul className="mt-3 space-y-2 text-gray-200">
                           {exp.achievements.map((achievement, i) => (
                             <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                               <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
@@ -198,11 +198,11 @@ const WorkExperience = () => {
                       </TabsContent>
                       
                       <TabsContent value="responsibilities" className="animate-fade-in">
-                        <h4 className="font-semibold text-apple-black flex items-center">
+                        <h4 className="font-semibold text-white flex items-center">
                           <Briefcase size={18} className="mr-2 text-apple-blue" />
                           Core Responsibilities
                         </h4>
-                        <ul className="mt-3 space-y-2">
+                        <ul className="mt-3 space-y-2 text-gray-200">
                           {exp.responsibilities.map((responsibility, i) => (
                             <li key={i} className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                               <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
@@ -213,15 +213,15 @@ const WorkExperience = () => {
                       </TabsContent>
 
                       <TabsContent value="leadership" className="animate-fade-in">
-                        <h4 className="font-semibold text-apple-black flex items-center">
+                        <h4 className="font-semibold text-white flex items-center">
                           <Users size={18} className="mr-2 text-apple-blue" />
                           Leadership Highlights
                         </h4>
                         <div className="mt-3 overflow-x-auto pb-2">
                           <div className="flex space-x-4">
                             {exp.leadership.map((item, i) => (
-                              <div key={i} className="flex-shrink-0 max-w-xs bg-gray-50 p-3 rounded-lg transform transition-all duration-300 hover:translate-y-[-2px]">
-                                <div className="flex items-start">
+                              <div key={i} className="flex-shrink-0 max-w-xs bg-dark-accent p-3 rounded-lg transform transition-all duration-300 hover:translate-y-[-2px]">
+                                <div className="flex items-start text-gray-200">
                                   <ChevronRight size={16} className="text-apple-blue mr-2 mt-1 flex-shrink-0" />
                                   <span>{item}</span>
                                 </div>
@@ -259,7 +259,7 @@ const WorkExperience = () => {
             }
           }}
         >
-          <p className="text-xl text-apple-darkgray flex items-center justify-center gap-2">
+          <p className="text-xl text-gray-200 flex items-center justify-center gap-2">
             View many more experiences on my{" "}
             <a 
               href="https://linkedin.com/in/dhanwants" 

@@ -34,11 +34,11 @@ const LicensesCertifications = () => {
   ];
 
   return (
-    <section id="certifications" className="section bg-gray-50 overflow-hidden">
+    <section id="certifications" className="section bg-dark-background overflow-hidden">
       <div className="container-custom">
         <div className="text-center mb-16 opacity-0 animate-slide-up" data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-apple-black mb-4">Licenses & Certifications</h2>
-          <p className="text-apple-darkgray text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-4">Licenses & Certifications</h2>
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto">
             Professional credentials that validate my expertise and commitment to excellence.
           </p>
           <div className="fancy-line"></div>
@@ -57,24 +57,24 @@ const LicensesCertifications = () => {
                 <div>
                   <div className="flex items-center mb-4">
                     <Award className="text-apple-blue mr-3" size={24} />
-                    <h3 className="font-bold text-xl text-apple-black">{cert.title}</h3>
+                    <h3 className="font-bold text-xl text-white">{cert.title}</h3>
                   </div>
-                  <p className="text-apple-darkgray mb-2">{cert.issuer}</p>
-                  <div className="flex items-center text-sm text-apple-darkgray mb-4">
+                  <p className="text-gray-200 mb-2">{cert.issuer}</p>
+                  <div className="flex items-center text-sm text-gray-300 mb-4">
                     <Calendar size={14} className="mr-1" />
                     <span>{cert.date}</span>
                   </div>
-                  <p className="text-sm text-apple-darkgray">Credential ID: {cert.credentialId}</p>
+                  <p className="text-sm text-gray-300">Credential ID: {cert.credentialId}</p>
                   
                   {cert.topics && (
                     <div className="mt-4">
-                      <h4 className="font-medium text-apple-black flex items-center mb-2">
+                      <h4 className="font-medium text-white flex items-center mb-2">
                         <BookOpen size={14} className="mr-1 text-apple-blue" />
                         Covered Topics:
                       </h4>
                       <ul className="space-y-1">
                         {cert.topics.map((topic, i) => (
-                          <li key={i} className="text-sm text-apple-darkgray flex items-start">
+                          <li key={i} className="text-sm text-gray-200 flex items-start">
                             <ChevronRight size={12} className="text-apple-blue mr-1 mt-1 flex-shrink-0" />
                             <span>{topic}</span>
                           </li>
