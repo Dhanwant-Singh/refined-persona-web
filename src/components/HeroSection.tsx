@@ -2,6 +2,7 @@
 import React from "react";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
@@ -12,18 +13,13 @@ const HeroSection = () => {
       className="section min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-0" // Added padding-top for mobile
     >
       <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Image first, now smaller and above the content */}
+        {/* Avatar with letter D */}
         <div className="lg:col-span-12 flex justify-center mb-5">
-          <div 
-            className="rounded-full overflow-hidden border-4 border-white shadow-xl"
-            style={{ width: '130px', height: '130px' }} 
-          >
-            <img
-              src="/lovable-uploads/8166c535-9fd7-47e4-a272-8b82da2418d0.png"
-              alt="Dhanwant Singh"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Avatar className="h-24 w-24 border-4 border-white shadow-xl bg-gradient-to-br from-purple-500 to-blue-600">
+            <AvatarFallback className="text-3xl font-bold text-white">
+              D
+            </AvatarFallback>
+          </Avatar>
         </div>
         
         {/* Content */}
